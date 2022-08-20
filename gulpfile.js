@@ -174,9 +174,7 @@ export const image = () => {
 };
 export const copy = () => {
   return gulp
-    .src(path.src.fonts, {
-      base: path.dist.base,
-    })
+    .src(path.src.fonts)
     .pipe(gulp.dest(path.dist.fonts))
     .pipe(
       browserSync.stream({
