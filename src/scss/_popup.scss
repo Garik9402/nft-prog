@@ -1,0 +1,156 @@
+@import 'mixin';
+
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: rgba(48, 9, 97, 0.3);
+   backdrop-filter: blur(7.5px);
+   visibility: hidden;
+   opacity: 0;
+   z-index: 20;
+
+   &--js-open {
+      transition: all 0.2s ease;
+      visibility: visible;
+      opacity: 1;
+   }
+
+   &--js-open &__container {
+      transition: all 0.3s ease;
+      opacity: 1;
+      visibility: visible;
+   }
+
+   &__container {
+      position: absolute;
+      padding: 0 20px;
+      max-width: 710px;
+      width: 100%;
+      top: 23%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 40;
+      opacity: 0;
+      visibility: hidden;
+
+      @include mq (lg) {
+         max-width: 573px;
+         width: 100%;
+      }
+
+      @include mq (md) {
+         max-width: 320px;
+         width: 100%;
+         padding: 0px;
+         height: 337px;
+      }
+   }
+
+
+   &__template {
+      position: relative;
+      background: url(../images/modal.png) no-repeat;
+      background-size: 100% 100%;
+      padding: 56px 145px 90px 70px;
+      z-index: 1;
+
+      @include mq (lg) {
+         padding: 50px 110px 60px 50px;
+      }
+
+      @include mq (md) {
+         width: 100%;
+         padding: 45px 16px 41px;
+         height: inherit;
+         background: url(../images/modal-mob.png) no-repeat;
+
+
+      }
+   }
+
+   &__close {}
+
+   &__template-inner {
+      max-width: 471px;
+      width: 100%;
+   }
+
+   &__title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 105%;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      margin-bottom: 25px;
+
+      @include mq (lg) {
+         font-size: 36px;
+         margin-bottom: 15px;
+      }
+
+      @include mq (md) {
+         font-size: 23px;
+         line-height: 130%;
+         letter-spacing: normal;
+      }
+
+   }
+
+   &__text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 120%;
+      color: #FFFFFF;
+      margin-bottom: 35px;
+
+      @include mq (lg) {
+         font-size: 18px;
+         margin-bottom: 25px;
+
+
+      }
+   }
+
+   &__form {}
+
+   &__form-email {
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      padding: 15px 20px;
+      outline: none;
+      border: none;
+
+      &::placeholder {
+         font-family: 'Inter', sans-serif;
+         font-weight: 400;
+         font-size: 18px;
+         line-height: 22px;
+         color: #757575;
+
+         @include mq (md) {
+            font-size: 17px;
+         }
+
+      }
+
+      @include mq (md) {
+         margin-bottom: 17px;
+      }
+   }
+}
+
+.form {
+
+   &__inner {}
+}
+
+.btn {}
+
+.btn--type-pay {}

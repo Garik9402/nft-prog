@@ -1,0 +1,74 @@
+@import "mixin.scss";
+
+
+.hidden-box {
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: rgba(48, 9, 97, 0.3);
+   backdrop-filter: blur(7.5px);
+   visibility: hidden;
+   opacity: 0;
+   z-index: 20;
+
+   @include mq (lg) {
+      &--js-open-box {
+         visibility: visible;
+         opacity: 1;
+         transition: all 0.3s ease;
+
+
+      }
+
+      &--js-open-box &__inner {
+         right: 0;
+         visibility: visible;
+         opacity: 1;
+         transition: all 0.3s ease;
+      }
+
+   }
+
+   &__inner {
+      width: calc(100% - 16px);
+      position: absolute;
+      background-color: #293344;
+      border-radius: 0px 0px 0px 30px;
+      right: -100%;
+      top: 0;
+      padding: 20px 0px 60px;
+      visibility: hidden;
+      opacity: 0;
+   }
+
+   &__continer {
+      padding: 0px 16px 0px 20px;
+   }
+
+   &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+   }
+
+   &__menu {
+      margin-bottom: 90px;
+   }
+
+   &__menu-list {}
+
+   &__menu-list-item {
+      &:not(:last-child) {
+         margin-bottom: 20px;
+      }
+   }
+
+   &__menu-item-link {}
+
+   &__btn {}
+}
+
+.hidden-box-overlay {}
