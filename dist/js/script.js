@@ -6,6 +6,7 @@ var burgerClose = document.querySelector('.btn-close-hidden');
 var hiddenBox = document.querySelector('.hidden-box');
 var hiddenBlock = document.querySelector('.hidden-box__inner');
 var $body = document.body;
+var wrapCont = document.querySelector('.wrapper-content');
 
 //burger - menu открытие и закрытие
 burger.addEventListener('click', function () {
@@ -22,22 +23,28 @@ var heroBtn = document.querySelector('.hero__btn');
 var popup = document.querySelector('.popup');
 var btnClosePopup = document.querySelector('.popup__close');
 var btnSubmit = document.querySelector('.btn--type-pay');
+var paddingOffset = window.innerWidth - $body.offsetWidth + 'px ';
 heroBtn.addEventListener('click', function () {
+  wrapCont.classList.add('wrapper-content--toggle-style');
   popup.classList.add('popup--js-open');
   $body.style.overflowY = 'hidden';
+  wrapCont.style.paddingRight = paddingOffset;
 });
 btnClosePopup.addEventListener('click', function () {
   popup.classList.remove('popup--js-open');
   $body.style.overflowY = 'visible';
+  wrapCont.style.paddingRight = '0px';
 });
 btnSubmit.addEventListener('click', function () {
   popup.classList.remove('popup--js-open');
   $body.style.overflowY = 'visible';
+  wrapCont.style.paddingRight = '0px';
 });
 popup.addEventListener('click', function (e) {
   if (e.target === popup) {
     popup.classList.remove('popup--js-open');
     $body.style.overflow = 'visible';
+    wrapCont.style.paddingRight = '0px';
   }
 });
 

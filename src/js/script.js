@@ -3,6 +3,7 @@ const burgerClose = document.querySelector('.btn-close-hidden');
 const hiddenBox = document.querySelector('.hidden-box');
 const hiddenBlock = document.querySelector('.hidden-box__inner');
 const $body = document.body
+const wrapCont = document.querySelector('.wrapper-content')
 
 //burger - menu открытие и закрытие
 burger.addEventListener('click', () => {
@@ -19,24 +20,33 @@ const heroBtn = document.querySelector('.hero__btn')
 const popup = document.querySelector('.popup')
 const btnClosePopup = document.querySelector('.popup__close')
 const btnSubmit = document.querySelector('.btn--type-pay')
+let paddingOffset = window.innerWidth - $body.offsetWidth + 'px '
 
 heroBtn.addEventListener('click', () => {
+   wrapCont.classList.add('wrapper-content--toggle-style')
    popup.classList.add('popup--js-open')
    $body.style.overflowY = 'hidden'
+   wrapCont.style.paddingRight = paddingOffset
+
 })
 
 btnClosePopup.addEventListener('click', () => {
    popup.classList.remove('popup--js-open')
    $body.style.overflowY = 'visible'
+   wrapCont.style.paddingRight = '0px'
+
 })
 btnSubmit.addEventListener('click', () => {
    popup.classList.remove('popup--js-open')
    $body.style.overflowY = 'visible'
+   wrapCont.style.paddingRight = '0px'
 })
+
 popup.addEventListener('click', (e) => {
    if (e.target === popup) {
       popup.classList.remove('popup--js-open')
       $body.style.overflow = 'visible'
+      wrapCont.style.paddingRight = '0px'
    }
 })
 

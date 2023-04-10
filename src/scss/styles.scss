@@ -4,11 +4,14 @@
 @import "hidden-box";
 @import "popup";
 
+.body {}
+
 
 
 .wrapper-content {
    overflow: hidden;
-   min-width: 100vw;
+   background-color: #1D2532;
+
 }
 
 .hero {
@@ -17,6 +20,7 @@
    padding: 30px 0px 135px;
    background: url(../images/hero-bg.png) no-repeat;
    background-size: cover;
+   overflow: hidden;
 
    @include mq (lg) {
       padding-bottom: 50px;
@@ -42,8 +46,9 @@
       }
 
       @include mq (lg) {
-         padding-top: 46px;
+         padding-top: 48.6px;
       }
+
    }
 
    &__content-inner {
