@@ -4,7 +4,8 @@ const hiddenBox = document.querySelector('.hidden-box');
 const hiddenBlock = document.querySelector('.hidden-box__inner');
 const $body = document.body
 const wrapCont = document.querySelector('.wrapper-content')
-
+const hero = document.querySelector('.hero')
+const education = document.querySelector('.education')
 //burger - menu открытие и закрытие
 burger.addEventListener('click', () => {
    hiddenBox.classList.add('hidden-box--js-open-box')
@@ -26,14 +27,16 @@ heroBtn.addEventListener('click', () => {
    wrapCont.classList.add('wrapper-content--toggle-style')
    popup.classList.add('popup--js-open')
    $body.style.overflowY = 'hidden'
-   wrapCont.style.paddingRight = paddingOffset
+   hero.style.paddingRight = paddingOffset
+   education.style.paddingRight = paddingOffset
 
 })
 
 btnClosePopup.addEventListener('click', () => {
    popup.classList.remove('popup--js-open')
    $body.style.overflowY = 'visible'
-   wrapCont.style.paddingRight = '0px'
+   hero.style.paddingRight = '0px'
+   education.style.paddingRight = '0px'
 
 })
 btnSubmit.addEventListener('click', () => {
@@ -46,7 +49,8 @@ popup.addEventListener('click', (e) => {
    if (e.target === popup) {
       popup.classList.remove('popup--js-open')
       $body.style.overflow = 'visible'
-      wrapCont.style.paddingRight = '0px'
+      hero.style.paddingRight = '0px'
+      education.style.paddingRight = '0px'
    }
 })
 
